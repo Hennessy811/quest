@@ -1,0 +1,109 @@
+<div class="container">
+<app-header></app-header>
+
+<div class="carousel-block">
+  <ngb-carousel #authSlider>
+
+    <ng-template ngbSlide>
+      <div class="slide-container">
+        <img [src]="images[0]" alt="Инструмент для проведения конкурсов" class="slide-item col-sm-12 col-md-6">
+        <div class="text-block col-md-6">
+          <h2>Инструмент для проведения конкурсов</h2>
+          <p>
+            SetQuest - удобный бесплатный инструмент для построения и развития
+            сообщества в сети. Мы не занимаемся "накруткой", "продвижением"
+            и любыми манипуляциями с подписчиками. Мы помогаем авторам
+            (блогерам, стримерам, брендам, администраторам пабликов - и т.д.)
+            встречать лицом к лицу свою лояльную аудиторию и выстраивать
+            с ней доверительные отношения.
+          </p>
+
+          <div class="controls">
+            <button class="get_started">От винта</button>
+
+            <div class="arrows">
+              <button class="control-arrows" (click)="authSlider.next()"><img src="assets/icons/Left_arrow.svg" alt=""></button>
+              <button class="control-arrows" (click)="authSlider.prev()"><img src="assets/icons/Right_arrow.svg" alt=""></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngbSlide>
+      <div class="slide-container">
+        <img [src]="images[1]" alt="Инструмент для проведения конкурсов" class="slide-item col-sm-12 col-md-6">
+        <div class="text-block col-md-6">
+          <h2>Инструмент для проведения конкурсов</h2>
+          <p>
+            SetQuest выполняет роль командного пульта или главного штаба
+            — здесь авторы создают задания и предлагают "плюшки"
+            для пользователей, а те, в свою очередь, получают доступ
+            к эксклюзивному контенту и понятную геймификацию.
+          </p>
+
+          <div class="controls">
+            <button class="get_started">От винта</button>
+
+            <div class="arrows">
+              <button class="control-arrows" (click)="authSlider.next()"><img src="assets/icons/Left_arrow.svg" alt=""></button>
+              <button class="control-arrows" (click)="authSlider.prev()"><img src="assets/icons/Right_arrow.svg" alt=""></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngbSlide>
+      <div class="slide-container">
+        <img [src]="images[2]" alt="Инструмент для проведения конкурсов" class="slide-item col-sm-12 col-md-6">
+        <div class="text-block col-md-6">
+          <h2>Инструмент для проведения конкурсов</h2>
+          <p>
+            Все подсчеты и проверки система проводит сама - прозрачно и честно.
+            Вы в реальном времени видите, как ваш креатив приводит к вам новых
+            активных подписчиков и подогревает интерес старых.
+          </p>
+
+          <div class="controls">
+            <button class="get_started">От винта</button>
+
+            <div class="arrows">
+              <button class="control-arrows" (click)="authSlider.next()"><img src="assets/icons/Left_arrow.svg" alt=""></button>
+              <button class="control-arrows" (click)="authSlider.prev()"><img src="assets/icons/Right_arrow.svg" alt=""></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+    <ng-template ngbSlide>
+      <div class="slide-container">
+        <img [src]="images[3]" alt="Инструмент для проведения конкурсов" class="slide-item col-sm-12 col-md-6">
+        <div class="text-block col-md-6">
+          <h2>Инструмент для проведения конкурсов</h2>
+          <p>
+            Мы приложили много усилий, чтобы сделать функционал SetQuest
+            таким продуманным и полезным. Попробуйте и оцените нашу работу!
+          </p>
+
+          <div class="controls">
+            <button class="get_started">От винта</button>
+
+            <div class="arrows">
+              <button class="control-arrows" (click)="authSlider.next()"><img src="assets/icons/Left_arrow.svg" alt=""></button>
+              <button class="control-arrows" (click)="authSlider.prev()"><img src="assets/icons/Right_arrow.svg" alt=""></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+
+  </ngb-carousel>
+
+</div>
+
+
+<app-footer></app-footer>
+</div>

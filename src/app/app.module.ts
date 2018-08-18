@@ -6,18 +6,31 @@ import { AuthComponent } from './auth/auth.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
-import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AppRoutingModule } from './/app-routing.module';
+import { CreateQuestComponent } from './create-quest/create-quest.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatFormFieldModule, MatInputModule, MatStepperModule} from '@angular/material';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CreateQuestComponent
   ],
   imports: [
     NgbModule.forRoot(),
-    BrowserModule
+    BrowserAnimationsModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

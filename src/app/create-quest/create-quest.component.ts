@@ -4,7 +4,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 @Component({
   selector: 'app-create-quest',
   templateUrl: './create-quest.component.html',
-  styleUrls: ['./create-quest.component.less']
+  styleUrls: ['./create-quest.component.sass']
 })
 export class CreateQuestComponent implements OnInit {
   isLinear = true;

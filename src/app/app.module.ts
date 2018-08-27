@@ -10,8 +10,12 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './/app-routing.module';
 import { CreateQuestComponent } from './create-quest/create-quest.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatFormFieldModule, MatInputModule, MatStepperModule} from '@angular/material';
+import {
+  MatFormFieldModule, MatInputModule, MatSelectModule,
+  MatStepperModule
+} from '@angular/material';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { MockupComponent } from './create-quest/mockup/mockup.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     AuthComponent,
     HeaderComponent,
     FooterComponent,
-    CreateQuestComponent
+    CreateQuestComponent,
+    MockupComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -30,7 +35,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatStepperModule
+    MatStepperModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

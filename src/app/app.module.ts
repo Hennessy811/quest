@@ -16,6 +16,7 @@ import {
 } from '@angular/material';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MockupComponent } from './create-quest/mockup/mockup.component';
+import { TasksListComponent } from './tasks-list/tasks-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MockupComponent } from './create-quest/mockup/mockup.component';
     HeaderComponent,
     FooterComponent,
     CreateQuestComponent,
-    MockupComponent
+    MockupComponent,
+    TasksListComponent
   ],
   imports: [
     NgbModule.forRoot(),

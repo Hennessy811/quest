@@ -1,0 +1,75 @@
+.grid_header
+  display: flex
+  justify-content: space-between
+  padding: 35px 0
+  h2
+    font-size: 20px
+  span
+    font-size: 15px
+    color: #727274
+
+.grid_content
+  box-shadow: 0 0 5px 1px rgba(180, 180, 180, 0.58)
+  border-radius: 10px
+  padding: 20px 20px
+
+  table
+    tr
+      border-bottom: 1px solid #ebebeb
+      td
+        padding: 15px 0
+      .task_description
+        padding-left: 15px
+        max-width: 480px
+        h3
+          font-size: 17px
+          font-weight: 500
+      .task_participants, .winners
+        text-align: center
+        padding: 0 80px
+        color: #e62f21
+        font-size: 25px
+        font-weight: 900
+        span
+          font-weight: 400
+          font-size: 14px
+          color: #737373
+.task_check
+  text-align: center
+  button
+    border: none
+    border-radius: 50px
+    background-color: #57ca79
+    width: 129px
+    height: 34px
+    color: white
+    font-size: 14px
+
+.tabled_content
+  &_item
+    margin-top: 30px
+    box-shadow: 0 0 5px 1px rgba(180, 180, 180, 0.58)
+    border-radius: 10px
+    padding: 15px 15px
+    width: 25%
+
+    img
+      margin-top: -25%
+    h3
+      font-size: 17px
+      margin-top: 15px
+    p
+      color: #737373
+    .counter
+      display: flex
+      //border-bottom: 1px solid #737373
+      .task_participants, .winners
+        padding: 0 5px
+        color: #e62f21
+        text-align: left
+        font-size: 17px
+        font-weight: 700
+        span
+          color: #737373
+          font-weight: 500
+          font-size: 14px

@@ -7,6 +7,9 @@
   span
     font-size: 15px
     color: #727274
+  &_layout
+    @media screen and (max-width: 1024px)
+      display: none
 
 .grid_content
   box-shadow: 0 0 5px 1px rgba(180, 180, 180, 0.58)
@@ -46,18 +49,25 @@
     font-size: 14px
 
 .tabled_content
+  display: grid
+  grid-auto-columns: auto
+  grid-template-columns: 25% 25% 25% 25%
+  @media screen and (max-width: 1024px)
+    display: block
   &_item
-    margin-top: 30px
+    margin: 30px 10px
     box-shadow: 0 0 5px 1px rgba(180, 180, 180, 0.58)
     border-radius: 10px
     padding: 15px 15px
-    width: 25%
-
     img
       margin-top: -25%
     h3
       font-size: 17px
       margin-top: 15px
+    @media screen and (max-width: 1024px)
+      width: unset
+      img
+        margin-top: unset
     p
       color: #737373
     .counter

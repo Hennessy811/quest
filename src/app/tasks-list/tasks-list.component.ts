@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksListComponent implements OnInit {
 
-  isListedDisplayMode = true;
+  isListedDisplayMode = false;
 
   constructor() { }
 

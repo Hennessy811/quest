@@ -1,3 +1,6 @@
+.create-quest
+  min-width: 490px
+
 h2
   padding: 35px 0
   font-family: Roboto
@@ -10,6 +13,9 @@ h2
 .general-step-container
   display: flex
   justify-content: space-between
+  @media screen and (max-width: 1024px)
+    display: block
+    margin: auto
 
 button
   padding: 10px 20px
@@ -65,6 +71,15 @@ p.general-info
   .step-next
     text-transform: initial
     float: right
+    @media screen and (max-width: 1024px)
+      float: unset;
+  @media screen and (max-width: 1024px)
+    width: 100%
+
+table
+  @media screen and (max-width: 1024px)
+    //width: -webkit-fill-available
+    //text-align: center
 
 .step-back
   border: none

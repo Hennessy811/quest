@@ -13,12 +13,12 @@
         <form [formGroup]="firstFormGroup">
           <div class="field-group">
             <ng-template matStepLabel>1. Основная информация</ng-template>
-            <label for="linkToChannel">Автор конкурса</label><br>
+            <label for="linkToChannel">Ссылка на автора розыгрыша</label><br>
             <span>Например: https://www.youtube.com/channel/UCMnP4AgDkEfdbvmWIUtXiEw</span><br>
             <mat-form-field>
               <input id="linkToChannel" matInput placeholder="Введите ссылку" formControlName="linkToAuthor">
             </mat-form-field>
-            <button class="add-link">Задать</button>
+            <button class="add-link">Добавить</button>
           </div>
           <div class="field-group">
             <label for="linkToTask">Ссылка на задание</label><br>
@@ -26,11 +26,11 @@
             <mat-form-field>
               <input id="linkToTask" matInput placeholder="Введите ссылку" formControlName="linkToTask">
             </mat-form-field>
-            <button class="add-link">Задать</button>
+            <button class="add-link">Добавить</button>
           </div>
         </form>
-        <div>
-          <button class="mt-5 step-next" mat-button matStepperNext>Дальше
+        <div class="step-btns">
+          <button class="step-next" mat-button matStepperNext>Дальше
             <img src="src/assets/icons/Next_arrow.svg" alt="">
           </button>
         </div>
@@ -43,27 +43,27 @@
     <div class="general-step-container">
       <div class="step-box">
         <p class="general-info">
-         2. Дополнительные данные
+         2. Дополнительно
         </p>
         <form [formGroup]="secondFormGroup">
           <div class="field-group">
-            <ng-template matStepLabel>2. Дополнительные данные</ng-template>
+            <ng-template matStepLabel>2. Дополнительно</ng-template>
             <mat-form-field>
-              <input class="w-100" id="enterHeaderName" matInput placeholder="Введите заголовок" formControlName="headerName">
+              <input class="w-100" id="enterHeaderName" matInput placeholder="Введите описание" formControlName="headerName">
             </mat-form-field>
             <br>
             <mat-form-field>
               <input class="w-100" id="enterDescription" matInput placeholder="Введите заголовок" formControlName="description">
             </mat-form-field>
             <br>
-            <label for="addlabel">Дополнительные поля</label><br>
+            <label for="addlabel">Контактные данные участника</label><br>
             <mat-form-field>
               <input id="addlabel" matInput placeholder="Название" formControlName="addlabel">
             </mat-form-field>
-            <button class="add-link">Задать</button>
+            <button class="add-link">Добавить</button>
           </div>
         </form>
-        <div class="mt-5">
+        <div class="step-btns">
           <button class="step-back" mat-button matStepperPrevious>Назад</button>
           <button class="step-next" mat-button matStepperNext>Дальше
             <img src="src/assets/icons/Next_arrow.svg" alt="">
@@ -98,25 +98,30 @@
               <input id="numberOfWinners" matInput placeholder="Название" formControlName="numberOfWinners">
             </mat-form-field>
           </div>
-          <div>
-            <button class="step-back" mat-button matStepperPrevious>Назад</button>
-            <button class="step-next" mat-button matStepperNext>Дальше
-              <img src="src/assets/icons/Next_arrow.svg" alt="">
-            </button>
-          </div>
+
         </form>
+        <div class="step-btns">
+          <button class="step-back" mat-button matStepperPrevious>Назад</button>
+          <button class="step-next" mat-button matStepperNext>Дальше
+            <img src="src/assets/icons/Next_arrow.svg" alt="">
+          </button>
+        </div>
       </div>
       <app-mockup></app-mockup>
     </div>
   </mat-step>
 
   <mat-step>
-    <ng-template matStepLabel>Well done!</ng-template>
+    <div class="general-step-container">
+      <div class="step-box">
+        <ng-template matStepLabel>3. Призы</ng-template>
+        <img class="final-step-slide" src="src/assets/images/slide_1.png" alt="">
+        <div class="step-btns-final text-center">
+          <button class="step-next w-auto ml-1 mr-2"><img class="mr-2" src="src/assets/icons/create_sign.svg" alt="">Создать конкурс</button>
+          <button class=" ml-2 mr-1" mat-button (click)="stepper.reset()">Сбросить</button>
+        </div>
+      </div>
     <app-mockup></app-mockup>
-
-    <div class="mt-5 text-center">
-      <button class="step-next w-auto ml-1 mr-2"><img class="mr-2" src="src/assets/icons/create_sign.svg" alt="">Создать конкурс</button>
-      <button class=" ml-2 mr-1" mat-button (click)="stepper.reset()">Сбросить</button>
     </div>
   </mat-step>
 

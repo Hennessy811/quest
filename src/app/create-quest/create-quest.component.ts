@@ -19,16 +19,16 @@ export class CreateQuestComponent implements OnInit {
 
   ngOnInit() {
     this.firstFormGroup = this._formBuilder.group({
-      linkToAuthor: ['', Validators.required],
-      linkToTask: ['', Validators.required]
+      linkToAuthor: [''], //, Validators.required
+      linkToTask: [''] //, Validators.required
     });
     this.secondFormGroup = this._formBuilder.group({
-      headerName: ['', Validators.required],
-      description: ['', Validators.required],
+      headerName: [''], //, Validators.required
+      description: [''], //, Validators.required
       addlabel: ['']
     });
     this.thirdFormGroup = this._formBuilder.group({
-      enterPrizeName: ['', Validators.required],
+      enterPrizeName: [''], //, Validators.required
       numberOfWinners: ['']
     });
   }

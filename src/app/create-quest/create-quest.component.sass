@@ -12,7 +12,10 @@ h2
 
 .general-step-container
   display: flex
+  //align-items: center
   justify-content: space-between
+  img.final-step-slide
+    margin-top: 55px
   @media screen and (max-width: 1024px)
     display: block
     margin: auto
@@ -22,8 +25,8 @@ button
   text-transform: uppercase
   border-radius: 50px
   border: none
-  background: white
-  width: 190px
+  background: transparent
+  width: 170px
   font-size: 14px
   vertical-align: baseline
   box-shadow: 0 0 1em #d9d9d9
@@ -68,11 +71,18 @@ p.general-info
 
 .step-box
   width: 55%
+  .step-btns
+    margin-top: 20px
+    float: right
+  .step-btns-final
+    text-align: center
+    margin-top: 25px
+  .step-back
+    width: fit-content
   .step-next
     text-transform: initial
-    float: right
     @media screen and (max-width: 1024px)
-      float: unset;
+      float: unset
   @media screen and (max-width: 1024px)
     width: 100%
 

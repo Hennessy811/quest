@@ -1,116 +1,48 @@
 <div class="container">
   <app-header></app-header>
-
+  <mat-spinner color="warn" class="m-auto spinner" *ngIf="isLoading"></mat-spinner>
   <div class="grid_layout">
     <div class="grid_header">
       <div>
         <h2>Все задания</h2>
-        <span>25 заданий</span>
+        <span *ngIf="tasksCount">{{tasksCount}} заданий</span>
       </div>
       <div class="grid_header_layout">
-        <img [ngClass]="{'active': isListedDisplayMode, 'inactive': !isListedDisplayMode}" (click)="isListedDisplayMode = true" src="src/assets/icons/display_listed.png" alt="">
-        <img [ngClass]="{'active': isListedDisplayMode, 'inactive': !isListedDisplayMode}" (click)="isListedDisplayMode = false" src="src/assets/icons/display_grid.png" alt="">
+        <img [ngClass]="{'active': isListedDisplayMode, 'inactive': !isListedDisplayMode}"
+             (click)="isListedDisplayMode = true" src="src/assets/icons/display_listed.png" alt="">
+        <img [ngClass]="{'active': isListedDisplayMode, 'inactive': !isListedDisplayMode}"
+             (click)="isListedDisplayMode = false" src="src/assets/icons/display_grid.png" alt="">
       </div>
     </div>
   </div>
 
-  <div class="grid_content" *ngIf="isListedDisplayMode">
+  <div class="grid_content" *ngIf="isListedDisplayMode && !isLoading">
     <table>
-      <tr>
+      <tr *ngFor="let task of tasksList" [id]="task.id">
         <td class="task_picture">
           <img src="src/assets/images/avatar_00.png" alt="">
         </td>
         <td class="task_description">
-          <h3 class="task_header">SQ // дизайн</h3>
-          <p>Условием участия в конкурсе является подписка на канал и лайк
-            к видео. Из тех, кто выполнит условия конкурса случайным образом
-            будет выбран победитель, который и получит приз.</p>
+          <h3 class="task_header">SQ // {{ task.headerName }}</h3>
+          <p>{{ task.description }}</p>
         </td>
-        <td class="task_participants">4334<br><span>участников</span></td>
+        <td class="task_participants">>100<br><span>участников</span></td>
         <td class="winners">0<br><span>победителей</span></td>
-        <td class="task_check"><button>Проверить</button></td>
-      </tr>
-      <tr>
-        <td class="task_picture">
-          <img src="src/assets/images/avatar_00.png" alt="">
+        <td class="task_check">
+          <button mat-button [routerLink]="['/tasks', task.id]">Проверить</button>
         </td>
-        <td class="task_description">
-          <h3 class="task_header">SQ // дизайн</h3>
-          <p>Условием участия в конкурсе является подписка на канал и лайк
-            к видео. Из тех, кто выполнит условия конкурса случайным образом
-            будет выбран победитель, который и получит приз.</p>
-        </td>
-        <td class="task_participants">4334<br><span>участников</span></td>
-        <td class="winners">0<br><span>победителей</span></td>
-        <td class="task_check"><button>Проверить</button></td>
-      </tr>
-      <tr>
-        <td class="task_picture">
-          <img src="src/assets/images/avatar_00.png" alt="">
-        </td>
-        <td class="task_description">
-          <h3 class="task_header">SQ // дизайн</h3>
-          <p>Условием участия в конкурсе является подписка на канал и лайк
-            к видео. Из тех, кто выполнит условия конкурса случайным образом
-            будет выбран победитель, который и получит приз.</p>
-        </td>
-        <td class="task_participants">4334<br><span>участников</span></td>
-        <td class="winners">0<br><span>победителей</span></td>
-        <td class="task_check"><button>Проверить</button></td>
-      </tr>
-      <tr>
-        <td class="task_picture">
-          <img src="src/assets/images/avatar_00.png" alt="">
-        </td>
-        <td class="task_description">
-          <h3 class="task_header">SQ // дизайн</h3>
-          <p>Условием участия в конкурсе является подписка на канал и лайк
-            к видео. Из тех, кто выполнит условия конкурса случайным образом
-            будет выбран победитель, который и получит приз.</p>
-        </td>
-        <td class="task_participants">4334<br><span>участников</span></td>
-        <td class="winners">0<br><span>победителей</span></td>
-        <td class="task_check"><button>Проверить</button></td>
-      </tr>
-      <tr>
-        <td class="task_picture">
-          <img src="src/assets/images/avatar_00.png" alt="">
-        </td>
-        <td class="task_description">
-          <h3 class="task_header">SQ // дизайн</h3>
-          <p>Условием участия в конкурсе является подписка на канал и лайк
-            к видео. Из тех, кто выполнит условия конкурса случайным образом
-            будет выбран победитель, который и получит приз.</p>
-        </td>
-        <td class="task_participants">4334<br><span>участников</span></td>
-        <td class="winners">0<br><span>победителей</span></td>
-        <td class="task_check"><button>Проверить</button></td>
-      </tr>
-      <tr>
-        <td class="task_picture">
-          <img src="src/assets/images/avatar_00.png" alt="">
-        </td>
-        <td class="task_description">
-          <h3 class="task_header">SQ // дизайн</h3>
-          <p>Условием участия в конкурсе является подписка на канал и лайк
-            к видео. Из тех, кто выполнит условия конкурса случайным образом
-            будет выбран победитель, который и получит приз.</p>
-        </td>
-        <td class="task_participants">4334<br><span>участников</span></td>
-        <td class="winners">0<br><span>победителей</span></td>
-        <td class="task_check"><button>Проверить</button></td>
       </tr>
 
     </table>
   </div>
 
-  <div class="tabled_content" *ngIf="!isListedDisplayMode">
-    <div class="tabled_content_item">
+  <div class="tabled_content" *ngIf="!isListedDisplayMode && !isLoading">
+    <div class="tabled_content_item" *ngFor="let task of tasksList" [id]="task.id">
       <img src="src/assets/images/avatar_00.png" alt="">
-      <h3>SQ // дизайн</h3>
+      <h3>SQ // {{ task.headerName }}</h3>
       <div class="counter">
         <div class="task_participants">
-          4334 <br>
+          >100 <br>
           <span>участников</span>
         </div>
         <div class="winners">
@@ -119,134 +51,9 @@
         </div>
       </div>
       <hr>
-      <p>Условием участия в конкурсе
-        является подписка на канал и лайк
-        к видео. Из тех, кто выполнит
-        условия конкурса случайным
-        образом будет выбран победитель,
-        который и получит приз.</p>
+      <p>{{ task.description }}</p>
       <div class="task_check">
-        <button>Проверить</button>
-      </div>
-    </div>
-    <div class="tabled_content_item">
-      <img src="src/assets/images/avatar_00.png" alt="">
-      <h3>SQ // дизайн</h3>
-      <div class="counter">
-        <div class="task_participants">
-          4334 <br>
-          <span>участников</span>
-        </div>
-        <div class="winners">
-          0 <br>
-          <span>победителей</span>
-        </div>
-      </div>
-      <hr>
-      <p>Условием участия в конкурсе
-        является подписка на канал и лайк
-        к видео. Из тех, кто выполнит
-        условия конкурса случайным
-        образом будет выбран победитель,
-        который и получит приз.</p>
-      <div class="task_check">
-        <button>Проверить</button>
-      </div>
-    </div>
-    <div class="tabled_content_item">
-      <img src="src/assets/images/avatar_00.png" alt="">
-      <h3>SQ // дизайн</h3>
-      <div class="counter">
-        <div class="task_participants">
-          4334 <br>
-          <span>участников</span>
-        </div>
-        <div class="winners">
-          0 <br>
-          <span>победителей</span>
-        </div>
-      </div>
-      <hr>
-      <p>Условием участия в конкурсе
-        является подписка на канал и лайк
-        к видео. Из тех, кто выполнит
-        условия конкурса случайным
-        образом будет выбран победитель,
-        который и получит приз.</p>
-      <div class="task_check">
-        <button>Проверить</button>
-      </div>
-    </div>
-    <div class="tabled_content_item">
-      <img src="src/assets/images/avatar_00.png" alt="">
-      <h3>SQ // дизайн</h3>
-      <div class="counter">
-        <div class="task_participants">
-          4334 <br>
-          <span>участников</span>
-        </div>
-        <div class="winners">
-          0 <br>
-          <span>победителей</span>
-        </div>
-      </div>
-      <hr>
-      <p>Условием участия в конкурсе
-        является подписка на канал и лайк
-        к видео. Из тех, кто выполнит
-        условия конкурса случайным
-        образом будет выбран победитель,
-        который и получит приз.</p>
-      <div class="task_check">
-        <button>Проверить</button>
-      </div>
-    </div>
-    <div class="tabled_content_item">
-      <img src="src/assets/images/avatar_00.png" alt="">
-      <h3>SQ // дизайн</h3>
-      <div class="counter">
-        <div class="task_participants">
-          4334 <br>
-          <span>участников</span>
-        </div>
-        <div class="winners">
-          0 <br>
-          <span>победителей</span>
-        </div>
-      </div>
-      <hr>
-      <p>Условием участия в конкурсе
-        является подписка на канал и лайк
-        к видео. Из тех, кто выполнит
-        условия конкурса случайным
-        образом будет выбран победитель,
-        который и получит приз.</p>
-      <div class="task_check">
-        <button>Проверить</button>
-      </div>
-    </div>
-    <div class="tabled_content_item">
-      <img src="src/assets/images/avatar_00.png" alt="">
-      <h3>SQ // дизайн</h3>
-      <div class="counter">
-        <div class="task_participants">
-          4334 <br>
-          <span>участников</span>
-        </div>
-        <div class="winners">
-          0 <br>
-          <span>победителей</span>
-        </div>
-      </div>
-      <hr>
-      <p>Условием участия в конкурсе
-        является подписка на канал и лайк
-        к видео. Из тех, кто выполнит
-        условия конкурса случайным
-        образом будет выбран победитель,
-        который и получит приз.</p>
-      <div class="task_check">
-        <button>Проверить</button>
+        <button mat-button [routerLink]="['/tasks', task.id]">Проверить</button>
       </div>
     </div>
   </div>

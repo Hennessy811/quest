@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AuthService, FacebookLoginProvider, GoogleLoginProvider, LinkedinLoginProvider} from 'angular-6-social-login';
+import { AuthService as AS} from '../../auth/auth-service';
 
 @Component({
   selector: 'app-social-signin',
@@ -8,7 +9,7 @@ import {AuthService, FacebookLoginProvider, GoogleLoginProvider, LinkedinLoginPr
 })
 export class SocialSigninComponent {
 
-  constructor(private socialAuthService: AuthService) {
+  constructor(private socialAuthService: AuthService, private as: AS) {
   }
 
   public socialSignIn(socialPlatform: string) {
@@ -26,7 +27,7 @@ export class SocialSigninComponent {
         console.log(socialPlatform + ' sign in data : ', userData);
         // Now sign-in with userData
         // ...
-
+        this.as.login(userData.email, userData.id);
       }
     );
   }

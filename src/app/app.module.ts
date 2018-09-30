@@ -30,6 +30,7 @@ import {
   SocialLoginModule
 } from 'angular-6-social-login';
 import { SocialSigninComponent } from './shared/social-signin/social-signin.component';
+import { TaskItemComponent } from './task-item/task-item.component';
 
 export function getAuthServiceConfigs() {
   const config = new AuthServiceConfig(
@@ -55,7 +56,8 @@ export function getAuthServiceConfigs() {
     LoginComponent,
     SignupComponent,
     ErrorComponent,
-    SocialSigninComponent
+    SocialSigninComponent,
+    TaskItemComponent,
   ],
   imports: [
     NgbModule.forRoot(),

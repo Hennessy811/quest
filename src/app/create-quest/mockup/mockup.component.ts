@@ -1,18 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChange} from '@angular/core';
 
 @Component({
   selector: 'app-mockup',
   templateUrl: './mockup.component.html',
   styleUrls: ['./mockup.component.sass']
 })
-export class MockupComponent implements OnInit {
+export class MockupComponent {
 
   constructor() {
   }
 
-  @Input('stepperData') stepperData: any;
-
-  ngOnInit() {
-  }
-
+  @Input() stepperData: any;
 }

@@ -25,26 +25,26 @@
               <td class="text-center"><img class="prize_img" src="src/assets/icons/prize-icon.svg" alt=""></td>
               <td>Название приза</td>
               <td>{{ stepperData.prize }}</td>
-              <td><img src="src/assets/icons/trash_icon.svg" alt=""></td>
+              <td></td>
             </tr>
             <tr>
               <td><img class="portrait" src="src/assets/icons/AVATAR.png" alt=""></td>
-              <td>Capybara SetQuest</td>
-              <td><button class="quest_action">Лайкнуть</button></td>
-              <td><img src="src/assets/icons/trash_icon.svg" alt=""></td>
+              <td>Поставить лайк под видео</td>
+              <td><button mat-button color="warn" class="quest_action">Лайкнуть</button></td>
+              <td><button class="delete_condition" disabled><img src="src/assets/icons/trash_icon.svg" alt=""></button></td>
             </tr>
             <tr>
               <td><img class="portrait" src="src/assets/icons/AVATAR.png" alt=""></td>
-              <td>Что такое SetQuest?</td>
-              <td><button class="quest_action">Подписаться</button></td>
-              <td><img src="src/assets/icons/trash_icon.svg" alt=""></td>
+              <td>Подписаться на канал</td>
+              <td><button mat-button color="warn" class="quest_action">Подписаться</button></td>
+              <td><button class="delete_condition" disabled><img src="src/assets/icons/trash_icon.svg" alt=""></button></td>
             </tr>
           </table>
         </div>
       </div>
     </div>
     <div class="text-center">
-    <button class="check-button">Проверить</button>
+    <button class="check-button" mat-button>Проверить</button>
     </div>
   </div>
 </div>

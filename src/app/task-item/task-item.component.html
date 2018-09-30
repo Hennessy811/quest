@@ -1,0 +1,61 @@
+<div class="container">
+  <app-header></app-header>
+
+  <mat-spinner color="warn" class="m-auto spinner" *ngIf="isLoading"></mat-spinner>
+
+  <div *ngIf="!isLoading" class="mockup-container">
+    <div class="mockup-body">
+      <div class="header-img">
+        <img src='src/assets/images/mockup_header.png' alt="">
+      </div>
+
+      <div class="mockup-body-content">
+        <div class="about_author">
+          <img src="src/assets/icons/AVATAR.png" alt="">
+          <p>SQ</p>
+        </div>
+
+        <div class="quiz_info">
+          <div class="quest_description">
+            <h3>{{ stepperData.headerName }}</h3>
+            <p>{{ stepperData.description }}</p>
+          </div>
+          <div class="quest_task">
+            <table class="m-auto">
+              <tr>
+                <td class="text-center"><img class="prize_img" src="src/assets/icons/prize-icon.svg" alt=""></td>
+                <td>Название приза</td>
+                <td>{{ stepperData.enterPrizeName }}</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><img class="portrait" src="src/assets/icons/AVATAR.png" alt=""></td>
+                <td>Поставить лайк под видео</td>
+                <td>
+                  <a target="_blank" [href]="stepperData.linkToTask"><button mat-button color="warn" class="quest_action">Лайкнуть</button></a>
+                </td>
+                <td>
+                </td>
+              </tr>
+              <tr>
+                <td><img class="portrait" src="src/assets/icons/AVATAR.png" alt=""></td>
+                <td>Подписаться на канал</td>
+                <td>
+                  <a target="_blank" [href]="stepperData.linkToAuthor"><button mat-button color="warn" class="quest_action">Подписаться</button></a>
+                </td>
+                <td>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="check-button" mat-button (click)="checkTask()">Проверить</button>
+      </div>
+    </div>
+  </div>
+
+
+  <app-footer></app-footer>
+</div>

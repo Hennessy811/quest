@@ -25,8 +25,13 @@ export class AuthService {
     name: string,
     services: string
   };
+  private user: any;
 
   constructor(private http: HttpClient, private router: Router) {}
+
+  getUserData() {
+    return this.user;
+  }
 
   getToken() {
     return this.token;
@@ -49,13 +54,13 @@ export class AuthService {
   }
 
   createUser(email: string, password: string) {
-    const signinData = `access_token=Gn7Br3f3kgsnSqAGouP6p0ZgQRtxQltw&email=${email}&password=${password}`;
+    const signinData = `access_token=bj9OLPpFxbcMvcsIQvLucBfAvCQLiv2d&email=${email}&password=${password}`;
 
     this.http
       .post(BACKEND_URL + '/users', signinData)
       .subscribe(
       () => {
-        this.router.navigate(['/login']);
+        this.login(email, password)
       },
       error => {
         this.authStatusListener.next(false);
@@ -71,7 +76,7 @@ export class AuthService {
     this.http
       .post<any>( // { token: string; expiresIn: number; userId: string }
         BACKEND_URL + '/auth',
-        'access_token=Gn7Br3f3kgsnSqAGouP6p0ZgQRtxQltw'
+        'access_token=bj9OLPpFxbcMvcsIQvLucBfAvCQLiv2d'
       )
       .subscribe(
         response => {
@@ -91,11 +96,14 @@ export class AuthService {
             // );
             // console.log(expirationDate);
             this.saveAuthData(token, this.userId);
+            console.log(response);
+            this.user = response;
             this.router.navigate(['/tasks-list']);
           }
         },
         error => {
           console.log(error);
+          this.createUser(this.authData.email, this.authData.password);
           this.authStatusListener.next(false);
         }
       );
@@ -158,15 +166,5 @@ export class AuthService {
       // expirationDate: new Date(expirationDate),
       userId: userId
     };
-  }
-
-  private gAuth(user: any) {
-    this.http.post(BACKEND_URL + '/auth/gauth', user)
-      .subscribe(response => {
-        console.log(response);
-      },
-        error2 => {
-        console.log(error2);
-        });
   }
 }

@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
+// --host 188.225.73.134 --port 3010 &&
+
 var book = require('./routes/start');
 var app = express();
 

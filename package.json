@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 188.225.73.134 --port 3010 && node ./bin/www",
+    "start": "ng serve node ./bin/www",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -23,6 +23,8 @@
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
     "@ng-bootstrap/ng-bootstrap": "^2.2.2",
+    "angular-6-social-login": "^1.1.1",
+    "angular5-social-login": "^1.0.9",
     "bluebird": "^3.5.2",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.3",

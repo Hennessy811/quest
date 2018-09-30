@@ -5,29 +5,26 @@
 
   <div class="mockup-body">
     <div class="header-img">
-      <img src="src/assets/images/mockup_header.png" alt="">
+      <img [src]='stepperData.headerImgUrl' alt="">
     </div>
 
     <div class="mockup-body-content">
       <div class="about_author">
         <img src="src/assets/icons/AVATAR.png" alt="">
-        <p>SETQUEST QUIZ</p>
+        <p >{{ stepperData.author }}</p>
       </div>
 
       <div class="quiz_info">
         <div class="quest_description">
-          <h3>Заголовок</h3>
-          <p>Условием участия в конкурсе является подписка
-            на канал и лайк к видео. Из тех, кто выполнит
-            условия конкурса случайным образом будет
-            выбран победитель, который получит приз.</p>
+          <h3>{{ stepperData.title }}</h3>
+          <p>{{ stepperData.description }}</p>
         </div>
         <div class="quest_task">
           <table class="m-auto">
             <tr>
               <td class="text-center"><img class="prize_img" src="src/assets/icons/prize-icon.svg" alt=""></td>
               <td>Название приза</td>
-              <td></td>
+              <td>{{ stepperData.prize }}</td>
               <td><img src="src/assets/icons/trash_icon.svg" alt=""></td>
             </tr>
             <tr>

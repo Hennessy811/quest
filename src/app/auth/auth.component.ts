@@ -9,10 +9,10 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 export class AuthComponent implements OnInit {
 
   images: Array<any> = [
-    'assets/images/slide_1.png',
-    'assets/images/slide_2.png',
-    'assets/images/slide_3.png',
-    'assets/images/slide_4.png',
+    'src/assets/images/slide_1.png',
+    'src/assets/images/slide_2.png',
+    'src/assets/images/slide_3.png',
+    'src/assets/images/slide_4.png',
   ];
 
 

@@ -25,6 +25,23 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './auth/auth-interceptor';
 import { ErrorComponent } from './error/error.component';
 import {ErrorInterceptor} from './error-interceptor';
+import {
+  AuthServiceConfig, FacebookLoginProvider, GoogleLoginProvider, LinkedinLoginProvider,
+  SocialLoginModule
+} from 'angular-6-social-login';
+import { SocialSigninComponent } from './shared/social-signin/social-signin.component';
+
+export function getAuthServiceConfigs() {
+  const config = new AuthServiceConfig(
+    [
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider('117096420795-ntn8g2hsh59fe5kk08bd8ujktfjs8qok.apps.googleusercontent.com')
+      }
+    ]
+);
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -37,12 +54,13 @@ import {ErrorInterceptor} from './error-interceptor';
     TasksListComponent,
     LoginComponent,
     SignupComponent,
-    ErrorComponent
+    ErrorComponent,
+    SocialSigninComponent
   ],
   imports: [
     NgbModule.forRoot(),
-    BrowserAnimationsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
@@ -55,9 +73,12 @@ import {ErrorInterceptor} from './error-interceptor';
     MatButtonModule,
     MatDividerModule,
     MatDialogModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    SocialLoginModule
   ],
   providers: [
+    { provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],

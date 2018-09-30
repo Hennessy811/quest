@@ -159,4 +159,14 @@ export class AuthService {
       userId: userId
     };
   }
+
+  private gAuth(user: any) {
+    this.http.post(BACKEND_URL + '/auth/gauth', user)
+      .subscribe(response => {
+        console.log(response);
+      },
+        error2 => {
+        console.log(error2);
+        });
+  }
 }
